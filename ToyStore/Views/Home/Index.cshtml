@@ -1,0 +1,33 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Магазин игрушек</title>
+</head>
+<body>
+    <div> 
+        <h3>Распродажа игрушек</h3>
+        <table>
+            <tr><td><p>Наименование</p></td>
+                <td><p>Производитель</p></td>
+                <td><p>Цена</p></td>
+            </tr>
+            @foreach (var item in ViewBag.Toys)
+            {
+                <tr>
+                    <td><p>@item.Title</p></td>
+                    <td><p>@item.Firm</p></td>
+                    <td><p>@item.Price</p></td>
+                    <td><p><a href="~/Controllers/HomeController.cs/Buy/@item.Id">Купить</a></p></td>
+                </tr>
+            }
+        </table>
+    </div>
+</body>
+</html>
